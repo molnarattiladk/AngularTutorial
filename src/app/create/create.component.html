@@ -1,0 +1,51 @@
+<div class="d-flex justify-content-center">
+  <form [formGroup]="createForm" (ngSubmit)="create()">
+  
+    <div class="form-group">
+      <input [ngClass]="{'is-invalid': createForm.get('name').errors && createForm.get('name').touched}" type="text" class="form-control" formControlName="name" placeholder="Név">
+      <div class="invalid-feedback">Please choose a personname</div>
+    </div>
+
+
+    <div class="form-group">
+      <input [ngClass]="{'is-invalid': createForm.get('birth').errors && createForm.get('birth').touched}" class="form-control" placeholder="Születési dátum" formControlName="birth">
+        <div class="invalid-feedback" *ngIf="createForm.get('birth').touched && createForm.get('birth').hasError('required')">Birth as is required</div>
+    </div>
+
+  
+    <div class="form-group"> 
+      <input [ngClass]="{'is-invalid': createForm.get('country').errors && createForm.get('country').touched}" type="text" class="form-control" placeholder="Ország" formControlName="country">
+    <div class="invalid-feedback" *ngIf="createForm.get('country').touched && createForm.get('country').hasError('required')">Country is required</div>
+    </div>
+    <div class="form-group">
+      <input [ngClass]="{'is-invalid': createForm.get('city').errors && createForm.get('city').touched}" type="text" class="form-control" placeholder="city" formControlName="city">
+    <div class="invalid-feedback" *ngIf="createForm.get('city').touched && createForm.get('city').hasError('required')">City is required</div>
+    </div>
+    <div class="form-group">
+      <input [ngClass]="{'is-invalid': createForm.get('job').errors && createForm.get('job').touched}" type="text" class="form-control" placeholder="job" formControlName="job">
+    <div class="invalid-feedback" *ngIf="createForm.get('job').touched && createForm.get('job').hasError('required')">Job is required</div>
+    </div>
+
+    <div class="form-group">
+      <input [ngClass]="{'is-invalid': createForm.get('interests').errors && createForm.get('interests').touched}" type="text" class="form-control" placeholder="interests" formControlName="interests">
+    <div class="invalid-feedback" *ngIf="createForm.get('interests').touched && createForm.get('interests').hasError('required')">interests is required</div>
+    </div>
+
+    <div class="form-group">
+      <input [ngClass]="{'is-invalid': createForm.get('email').errors && createForm.get('email').touched}" type="text" class="form-control" placeholder="email" formControlName="email">
+    <div class="invalid-feedback" *ngIf="createForm.get('email').touched && createForm.get('email').hasError('required')">email is required</div>
+    </div>
+
+    <div class="form-group">
+      <input [ngClass]="{'is-invalid': createForm.get('phone').errors && createForm.get('phone').touched}" type="text" class="form-control" placeholder="phone" formControlName="phone">
+    <div class="invalid-feedback" *ngIf="createForm.get('phone').touched && createForm.get('phone').hasError('required')">phone is required</div>
+    </div>
+
+
+    <div class="form-group text-center">
+      <button class="btn btn-success mr-2" [disabled]="!createForm.valid" type="submit">Hozzáad</button>
+      <button class="btn btn-default" type="button"(click)="cancel()">Mégsem</button>
+    </div>
+
+  </form>
+</div>

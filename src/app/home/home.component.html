@@ -1,0 +1,31 @@
+<div class="d-flex justify-content-center">
+  <button class="btn btn-primary" [routerLink]="['/create']">Felvétel</button>
+</div>
+
+<div class="container d-flex justify-content-center">
+  <div class="row">
+       <div class="col-md-6">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Azonosító</th>
+            <th>Név</th>
+            <th>Munka</th>
+            <th>Elérhetőség</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let person of people">
+            <td>{{person.id}}</td>
+            <td>{{person.name}}</td>
+            <td>{{person.job}}</td>
+            <td>{{person.email}}</td>
+            <td><button [routerLink]="['/detailed', person.id]">Részletek</button></td>
+            <td><button [routerLink]="['/edit', person.id]">Szerkesztés</button></td>
+            <td><button (click)="delete(person.id)">Törlés</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

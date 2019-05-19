@@ -1,0 +1,15 @@
+<form #editForm="ngForm" id="editForm" (ngSubmit)="updatePerson()">
+  <h4>Név:</h4>
+  <input type="text" name="name" class="form-control" [(ngModel)]="person.name">
+  <h4>Munka </h4>
+  <input type="text" name="job" class="form-control" [(ngModel)]="person.job">
+  <h4>Email</h4>
+  <input type="text" name="email" class="form-control" [(ngModel)]="person.email">
+  <h4>Telefon</h4>
+  <input type="text" name="phone" class="form-control" [(ngModel)]="person.phone">
+  <h4>Érdeklődés</h4>
+  <input type="text" name="interests" class="form-control" [(ngModel)]="person.interests">
+  <h4>Város</h4>
+  <input type="text" name="city" class="form-control" [(ngModel)]="person.city">
+</form>
+<button [disabled]="!editForm.dirty" form="editForm" class="btn btn-success btn-block">Save Changes</button>
